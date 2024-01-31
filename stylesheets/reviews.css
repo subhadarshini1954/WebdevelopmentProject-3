@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* .............variables................. */
+:root {
+  --max-width: 1170px;
+  --fixed-width: 620px;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Common Styling ..................  */
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1rem;
+  /* margin-bottom: 1rem; */
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ..................................main..........................  */
+
+#container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  gap: 2rem;  
+  margin: 0 auto; 
+}
+
+/* .....................Navbar section........................... */
+#navbar,
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+#navbar {
+  margin: 0 auto;
+  width: 100%;
+  background-color: black;
+  padding: 2rem 8rem;
+  color: white;
+  /* box-shadow: 0 5px 15px rgb(0, 0, 0); */
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.nav-links li {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.nav-links li a {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: aqua;
+  transition: var(--transition);
+}
+
+.nav-links li a.active::after,
+.nav-links li a:hover::after {
+  content: "";
+  width: 30%;
+  height: 0.2rem;
+  background: aqua;
+  position: absolute;
+  bottom: -0.1rem;
+  left: 2rem;
+}
+
+#mobile-nav {
+  display: none;
+  align-items: center;
+}
+
+#close-btn {
+  display: none;
+}
+
+
+
+/* ...............................review section..........................  */
+.review-container{
+  width: 90%;
+  min-width: 270px;
+  margin: 1rem auto;
+}
+
+.title {
+  width: 90%;
+  text-align: center;
+  margin:0 auto 4rem auto;
+
+}
+
+.underline {
+  height: 0.25rem;
+  width: 5rem;
+  background: hsl(205, 78%, 60%);  
+  margin:0 auto 2rem auto;
+}
+
+.review {
+  width: 90%;
+  margin: 0 auto;
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.review:hover {
+  box-shadow: var(--dark-shadow);
+}
+
+.img-container {  
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
+#person-img {
+  width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+}
+
+.img-container::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f10e";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transform: translateY(25%);
+  background: hsl(205, 78%, 60%);
+  color: white;
+}
+
+.img-container::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: hsl(205, 78%, 60%);
+  position: absolute;
+  top: -0.25rem;
+  right: -0.5rem;
+  border-radius: 50%;
+}
+
+#author {
+  width: 90%;
+  margin:0 auto 0.25rem auto;
+}
+
+#membership {
+  width: 90%;
+  margin:0 auto 0.5rem auto;
+  text-transform: uppercase;
+  color: hsl(205, 78%, 60%);
+  font-size: 0.85rem;
+}
+
+#info,
+#stars,
+.button-container {
+  width: 90%;
+  margin:0 auto 0.75rem auto;
+}
+
+.prev-btn,
+.next-btn {
+  color: hsl(211, 27%, 70%);
+  font-size: 1.25rem;
+  background: transparent;
+  border-color: transparent;
+  margin: 0 0.5rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  color: hsl(205, 78%, 60%);
+}
+
+.membership-btn {
+  margin-top: 0.5rem;
+  background: hsl(205, 100%, 96%);
+  color: hsl(205, 78%, 60%);
+  padding: 0.25rem 0.5rem;
+  text-transform: capitalize;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  border-color: hsl(205, 78%, 60%);
+  cursor: pointer;
+}
+
+.membership-btn:hover {
+  background: hsl(205, 78%, 60%);
+  color: hsl(205, 86%, 17%);
+}
+
+/* ..........................footer section...........................  */
+footer {
+  padding: 2rem 8rem;
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-gap: 1rem;
+}
+
+.footer-links,
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-links {
+  padding: 1rem;
+}
+
+.footer-links ul {
+  justify-content: space-evenly;
+  align-items: flex-start;
+
+}
+
+.footer-links a {
+  color: white;
+}
+
+.footer-margin {
+  margin-top: 2rem;
+}
+/* ...................................media queries.............................  */
+@media (max-width:1124px) {
+
+  /* nav-bar mediaquery............  */
+  .nav-links {
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -30rem;
+    height: 100vh;
+    width: 30rem;
+    background-color: black;
+    padding: 8rem 0 0 1rem;
+    transition: var(--transition);
+  }
+
+  .nav-links.active {
+    right: 0rem;
+  }
+
+  .nav-links li {
+    margin-bottom: 2.5rem;
+  }
+
+  #mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #mobile-nav i {
+    font-size: 2.4rem;
+    padding-left: 2rem;
+  }
+
+  #close-btn {
+    display: initial;
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    color: white;
+    font-size: 2rem;
+  }
+
+  #shopping {
+    display: none;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.75rem;
+    /* margin-bottom: 1rem; */
+  }
+
+}
+
+@media (max-width:946px) {
+
+  /* setting for padding for sections ....  */
+  #navbar,
+  #social-contact-footer {
+    padding: 1rem 5rem;
+  } 
+}
+
+@media (max-width:430px) {
+
+  /* setting for padding for sections ....  */
+  #navbar,
+  #social-contact-footer {
+    padding: 1rem 1rem;
+  }
+  .review {    
+    padding: 1rem 1rem;   
+  }
+  #mobile-nav i {
+    font-size: 1.8rem;
+    padding-left: 1rem;
+  }
+  .logo {
+    
+    font-size: 1.5rem;
+    
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.75rem;  
+  }
+
+}
+
+@media (max-width:300px) {
+  #navbar,
+  #social-contact-footer {
+    padding: 0.2rem 0.50rem;
+  }
+  .review {   
+    padding: 1rem 0.50rem;   
+  }  
+  .img-container {    
+    width: 125px;
+    height: 125px;    
+  }
+  #navbar,
+  .nav-links {
+    justify-content: space-around;
+  }
+
+  #mobile-nav i {
+    font-size: 1rem;
+    padding-left: 0.2rem;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-size: 0.75rem;
+  }
+
+  p {
+    font-size: 0.50rem;
+  }
+  footer{
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+.nav-links {
+  right: -24rem;
+  width: 24rem;  
+}
+
+}
